@@ -22,19 +22,17 @@ p::selection {
   flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
+  width: 100vw;
   height: 100vh;
   padding: 10px;
-  background-image: url("./star_background.jpg");
-}
-
-#start-btn-container {
+  background-image: url("./assets/images/star_background.jpg");
 }
 
 #startBtn {
-  /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 44px;
   font-weight: 1000;
   font-family: "Amatic SC", "Sans Serif";
@@ -67,15 +65,14 @@ p::selection {
   color: white;
   font-family: "Amatic SC", "Sans Serif";
   font-weight: 1000;
-  font-size: 38px;
-  /* background-color: red; */
+  font-size: 48px;
 }
 
 #score-text {
   color: white;
   font-family: "Amatic SC", "Sans Serif";
   font-weight: 1000;
-  font-size: 38px;
+  font-size: 48px; 
 }
 
 img::selection {
@@ -85,10 +82,9 @@ img::selection {
 .player-img {
   height: 100px;
   width: 100px;
-  /* alt: "image"; */
 }
 
-#cursor {
+#cursor-img {
   height: 50px;
   position: absolute;
   transform: translate(-50%, -50%);

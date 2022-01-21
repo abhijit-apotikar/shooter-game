@@ -1,5 +1,5 @@
 //custom cursor
-const cursor = document.querySelector("#cursor");
+const cursor = document.querySelector("#cursor-img");
 window.addEventListener("mousemove", (e) => {
   cursor.style.top = e.pageY + "px";
   cursor.style.left = e.pageX + "px";
@@ -36,8 +36,8 @@ player1.append(player1_name);
 const player1_img = document.createElement("img");
 player1_img.setAttribute("class", "player-img");
 player1_img.setAttribute("id", "player1-img");
-player1_img.setAttribute("src", "./yellow.png");
-player1_img.setAttribute("z-index", "2");
+player1_img.setAttribute("src", "./assets/images/yellow.png");
+player1_img.setAttribute("z-index", 2);
 
 //player2
 const player2 = document.createElement("div");
@@ -49,18 +49,14 @@ player2.append(player2_name);
 const player2_img = document.createElement("img");
 player2_img.setAttribute("class", "player-img");
 player2_img.setAttribute("id", "player2-img");
-player2_img.setAttribute("src", "./pink.png");
-player2_img.setAttribute("z-index", "2");
+player2_img.setAttribute("src", "./assets/images/pink.png");
+player2_img.setAttribute("z-index", 2);
 
-// //putting damage at mouse position
-// const game_play_section = document.querySelector("#game_play_section");
-// const damage = document.querySelector("#damage-img");
-// window.addEventListener("click", (e)=>{
-//   game_play_section.append(damage_img);
-//   // damage.style.display = "visible";
-//   damage.style.top = e.pageY + "px";
-//   damage.style.left = e.pageX + "px";
-// });
+//creating damage-img
+const damage_img = document.createElement("img");
+damage_img.setAttribute("id", "damage-img");
+damage_img.setAttribute("src", "./assets/images/damage.png");
+damage_img.setAttribute("z-index", 3);
 
 //adding player1_img at random positons inside the geme_play_section
 setInterval(() => {
@@ -71,47 +67,23 @@ setInterval(() => {
   player1_img.style.left = randLeft + "px";
 }, 1300);
 
-const clickHandler = () => {
-  const welcomeMsg = document.createElement("p");
-  welcomeMsg.setAttribute("id", "welcome-msg");
-  welcomeMsg.innerText = "Welcome";
-  document.body.appendChild(welcomeMsg);
-  console.log("Welcome");
-};
+//making the damage disappear after 200ms
+setInterval(() => {
+  damage_img.parentElement.removeChild(damage_img);
+}, 650);
+
+//moving damge-img and calculating score
+window.addEventListener("click", (e) => {
+  damage_img.style.top = e.pageY + "px";
+  damage_img.style.left = e.pageX + "px";
+  game_play_section.append(damage_img);
+  if (e.target == player1_img) score++;
+  score_text.innerText = `Score: ${score}`;
+});
 
 const startGame = () => {
   // appending player1_img to game_play_section
   game_play_section.append(player1_img);
-
-  // //appending player1_img to game_play_section
-  // game_play_section.append(player2_img);
-
-  // //creating crosshair-img
-  // const crosshair_img = document.createElement("img");
-  // crosshair_img.setAttribute("id", "cursor");
-  // crosshair_img.setAttribute("src", "./crosshair.png");
-
-  // // appdending crosshair_img to the gameplay_section
-  // game_play_section.append(crosshair_img);
-
-  //creating damage-img
-  const damage_img = document.createElement("img");
-  damage_img.setAttribute("id", "damage-img");
-  damage_img.setAttribute("src", "./damage.png");
-  // damage_img.setAttribute("display", "none");
-  damage_img.setAttribute("z-index", "3");
-
-  window.addEventListener("click", (e) => {
-    // damage.style.display = "visible";
-    damage_img.style.top = e.pageY + "px";
-    damage_img.style.left = e.pageX + "px";
-    game_play_section.append(damage_img);
-    if(e.target == player1_img) score++;
-    score_text.innerText= `Score: ${score}`;
-  });
-
-  // // appdending damage_img to the gameplay_section
-  // game_play_section.append(damage_img);
 
   //appending player1 and player2 to score_info_section
   score_info_section.append(player1);
@@ -126,6 +98,5 @@ const startGame = () => {
 
   //removing the start button
   const startBtn = document.querySelector("#startBtn");
-  const parentElement = document.querySelector("#container");
   startBtn.parentElement.removeChild(startBtn);
 };
