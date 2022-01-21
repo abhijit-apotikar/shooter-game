@@ -64,8 +64,7 @@ p::selection{
   flex-grow: 1;
 }
 
-.player {
-}
+
 .player p {
   color: white;
   font-family: "Amatic SC", "Sans Serif";
@@ -80,7 +79,7 @@ img::selection{
 
 .player-img{
     height:100px;
-    /* width: 100px; */
+    width: 100px;
     /* alt: "image"; */
 }
 
@@ -104,5 +103,5 @@ img::selection{
 #game_play_section {
   /* background-color: green; */
   flex-grow: 5;
-
+  overflow: hidden;
 }
