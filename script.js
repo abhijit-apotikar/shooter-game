@@ -5,6 +5,13 @@ window.addEventListener("mousemove", (e) => {
   cursor.style.left = e.pageX + "px";
 });
 
+//putting damage at mouse position
+const damage = document.querySelector("#damage-img");
+window.addEventListener("click", (e)=>{
+  damage.style.top = e.pageY + "px";
+  damage.style.left = e.pageX + "px";
+});
+
 const clickHandler = () => {
   const welcomeMsg = document.createElement("p");
   welcomeMsg.setAttribute("id", "welcome-msg");

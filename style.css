@@ -97,6 +97,8 @@ img::selection{
 #damage-img{
   height: 80px;
   z-index: 3;
+  position:absolute;
+  transform: translate(-50%, -50%);
 }
 
 #game_play_section {
