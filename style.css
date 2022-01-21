@@ -7,14 +7,13 @@
   cursor: none;
   font-family: "Amatic SC", "Sans Serif";
   overflow: hidden;
-
 }
 
 body {
   background-color: black;
 }
 
-p::selection{
+p::selection {
   background: transparent;
 }
 
@@ -64,7 +63,6 @@ p::selection{
   flex-grow: 1;
 }
 
-
 .player p {
   color: white;
   font-family: "Amatic SC", "Sans Serif";
@@ -73,30 +71,37 @@ p::selection{
   /* background-color: red; */
 }
 
-img::selection{
+#score-text {
+  color: white;
+  font-family: "Amatic SC", "Sans Serif";
+  font-weight: 1000;
+  font-size: 38px;
+}
+
+img::selection {
   background: transparent;
 }
 
-.player-img{
-    height:100px;
-    width: 100px;
-    /* alt: "image"; */
+.player-img {
+  height: 100px;
+  width: 100px;
+  /* alt: "image"; */
 }
 
-#cursor{
-    height: 50px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 4;
-    transition: 0.3s transform ease;
-    transform-origin: 100% 100%;
+#cursor {
+  height: 50px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 4;
+  transition: 0.3s transform ease;
+  transform-origin: 100% 100%;
 }
 
-#damage-img{
+#damage-img {
   height: 80px;
   z-index: 3;
-  position:absolute;
+  position: absolute;
   transform: translate(-50%, -50%);
 }
 

@@ -5,10 +5,18 @@ window.addEventListener("mousemove", (e) => {
   cursor.style.left = e.pageX + "px";
 });
 
+//sore variable
+let score = 0;
+
 const container = document.getElementById("container");
 //creating score_info_section
 const score_info_section = document.createElement("div");
 score_info_section.setAttribute("id", "score-info-section");
+
+//score text
+const score_text = document.createElement("p");
+score_text.innerText = "Score: 0";
+score_text.setAttribute("id", "score-text");
 
 //creating game_play_section
 const game_play_section = document.createElement("div");
@@ -61,7 +69,7 @@ setInterval(() => {
   player1_img.style.position = "absolute";
   player1_img.style.top = randTop + "px";
   player1_img.style.left = randLeft + "px";
-}, 1150);
+}, 1300);
 
 const clickHandler = () => {
   const welcomeMsg = document.createElement("p");
@@ -98,6 +106,8 @@ const startGame = () => {
     damage_img.style.top = e.pageY + "px";
     damage_img.style.left = e.pageX + "px";
     game_play_section.append(damage_img);
+    if(e.target == player1_img) score++;
+    score_text.innerText= `Score: ${score}`;
   });
 
   // // appdending damage_img to the gameplay_section
@@ -105,6 +115,7 @@ const startGame = () => {
 
   //appending player1 and player2 to score_info_section
   score_info_section.append(player1);
+  score_info_section.append(score_text);
   score_info_section.append(player2);
 
   //prepending score_info_section to container
