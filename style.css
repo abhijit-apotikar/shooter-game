@@ -4,6 +4,10 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  cursor: none;
+  font-family: "Amatic SC", "Sans Serif";
+  overflow: hidden;
+
 }
 
 body {
@@ -80,12 +84,19 @@ img::selection{
     /* alt: "image"; */
 }
 
-#crosshair-img{
+#cursor{
     height: 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 4;
+    transition: 0.3s transform ease;
+    transform-origin: 100% 100%;
 }
 
 #damage-img{
   height: 80px;
+  z-index: 3;
 }
 
 #game_play_section {
