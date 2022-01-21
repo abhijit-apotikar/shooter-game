@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+p::selection{
+  background: transparent;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 100vh;
+  padding: 10px;
+  background-image: url("./star_background.jpg");
+}
+
+#start-btn-container {
+}
+
+#startBtn {
+  /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+  font-size: 44px;
+  font-weight: 1000;
+  font-family: "Amatic SC", "Sans Serif";
+  color: black;
+  outline: none;
+  /* background: transparent; */
+  padding: 5px;
+  /* border: solid 2px green; */
+}
+
+#welcome-msg {
+  font-family: "Amatic SC", "Sanc Serif";
+  font-size: 44px;
+  font-weight: 1000;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  color: white;
+}
+
+#score-info-section {
+  /* background-color: pink; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.player {
+}
+.player p {
+  color: white;
+  font-family: "Amatic SC", "Sans Serif";
+  font-weight: 1000;
+  font-size: 38px;
+  /* background-color: red; */
+}
+
+img::selection{
+  background: transparent;
+}
+
+.player-img{
+    height:100px;
+    /* width: 100px; */
+    /* alt: "image"; */
+}
+
+#crosshair-img{
+    height: 50px;
+}
+
+#damage-img{
+  height: 80px;
+}
+
+#game_play_section {
+  /* background-color: green; */
+  flex-grow: 5;
+
+}
