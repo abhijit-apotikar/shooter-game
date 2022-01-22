@@ -5,10 +5,10 @@ window.addEventListener("mousemove", (e) => {
   cursor.style.left = e.pageX + "px";
 });
 
-//sore variable
 let score = 0;
 
 const container = document.getElementById("container");
+
 //creating score_info_section
 const score_info_section = document.createElement("div");
 score_info_section.setAttribute("id", "score-info-section");
@@ -36,7 +36,8 @@ player1.append(player1_name);
 const player1_img = document.createElement("img");
 player1_img.setAttribute("class", "player-img");
 player1_img.setAttribute("id", "player1-img");
-player1_img.setAttribute("src", "./assets/images/yellow.png");
+player1_img.setAttribute("src", "https://drive.google.com/uc?export=view&id=1-INzQowmlSO2QeOESQtyAbdkOC-9Vi3Y");
+player1_img.setAttribute("alt", "player1.png");
 player1_img.setAttribute("z-index", 2);
 
 //player2
@@ -49,13 +50,15 @@ player2.append(player2_name);
 const player2_img = document.createElement("img");
 player2_img.setAttribute("class", "player-img");
 player2_img.setAttribute("id", "player2-img");
-player2_img.setAttribute("src", "./assets/images/pink.png");
+player2_img.setAttribute("src", "https://drive.google.com/uc?export=view&id=10BdeVevxH6IfsxdAf5eA2nQ2mY_odxJ4");
+player2_img.setAttribute("alt", "player2.png");
 player2_img.setAttribute("z-index", 2);
 
 //creating damage-img
 const damage_img = document.createElement("img");
 damage_img.setAttribute("id", "damage-img");
-damage_img.setAttribute("src", "./assets/images/damage.png");
+damage_img.setAttribute("src", "https://drive.google.com/uc?export=view&id=1aoFxGBq5_nc6HkPSj3LePWZpgalNVx0g");
+player2_img.setAttribute("alt", "damage_img.png");
 damage_img.setAttribute("z-index", 3);
 
 //adding player1_img at random positons inside the geme_play_section
@@ -82,21 +85,16 @@ window.addEventListener("click", (e) => {
 });
 
 const startGame = () => {
-  // appending player1_img to game_play_section
   game_play_section.append(player1_img);
 
-  //appending player1 and player2 to score_info_section
   score_info_section.append(player1);
   score_info_section.append(score_text);
   score_info_section.append(player2);
 
-  //prepending score_info_section to container
   container.prepend(score_info_section);
 
-  //appending game_play_section to container
   container.append(game_play_section);
 
-  //removing the start button
   const startBtn = document.querySelector("#startBtn");
   startBtn.parentElement.removeChild(startBtn);
 };
