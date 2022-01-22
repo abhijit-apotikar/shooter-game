@@ -36,7 +36,10 @@ player1.append(player1_name);
 const player1_img = document.createElement("img");
 player1_img.setAttribute("class", "player-img");
 player1_img.setAttribute("id", "player1-img");
-player1_img.setAttribute("src", "https://drive.google.com/uc?export=view&id=1-INzQowmlSO2QeOESQtyAbdkOC-9Vi3Y");
+player1_img.setAttribute(
+  "src",
+  "https://drive.google.com/uc?export=view&id=1-INzQowmlSO2QeOESQtyAbdkOC-9Vi3Y"
+);
 player1_img.setAttribute("alt", "player1.png");
 player1_img.setAttribute("z-index", 2);
 
@@ -50,15 +53,21 @@ player2.append(player2_name);
 const player2_img = document.createElement("img");
 player2_img.setAttribute("class", "player-img");
 player2_img.setAttribute("id", "player2-img");
-player2_img.setAttribute("src", "https://drive.google.com/uc?export=view&id=10BdeVevxH6IfsxdAf5eA2nQ2mY_odxJ4");
+player2_img.setAttribute(
+  "src",
+  "https://drive.google.com/uc?export=view&id=10BdeVevxH6IfsxdAf5eA2nQ2mY_odxJ4"
+);
 player2_img.setAttribute("alt", "player2.png");
 player2_img.setAttribute("z-index", 2);
 
 //creating damage-img
 const damage_img = document.createElement("img");
 damage_img.setAttribute("id", "damage-img");
-damage_img.setAttribute("src", "https://drive.google.com/uc?export=view&id=1aoFxGBq5_nc6HkPSj3LePWZpgalNVx0g");
-player2_img.setAttribute("alt", "damage_img.png");
+damage_img.setAttribute(
+  "src",
+  "https://drive.google.com/uc?export=view&id=1aoFxGBq5_nc6HkPSj3LePWZpgalNVx0g"
+);
+damage_img.setAttribute("alt", "damage_img.png");
 damage_img.setAttribute("z-index", 3);
 
 //adding player1_img at random positons inside the geme_play_section
@@ -70,11 +79,6 @@ setInterval(() => {
   player1_img.style.left = randLeft + "px";
 }, 1300);
 
-//making the damage disappear after 200ms
-setInterval(() => {
-  damage_img.parentElement.removeChild(damage_img);
-}, 650);
-
 //moving damge-img and calculating score
 window.addEventListener("click", (e) => {
   damage_img.style.top = e.pageY + "px";
@@ -82,6 +86,13 @@ window.addEventListener("click", (e) => {
   game_play_section.append(damage_img);
   if (e.target == player1_img) score++;
   score_text.innerText = `Score: ${score}`;
+});
+
+//making the damage disappear after 200ms
+window.addEventListener("click", (e) => {
+  setInterval(() => {
+    damage_img.parentElement.removeChild(damage_img);
+  }, 650);
 });
 
 const startGame = () => {
