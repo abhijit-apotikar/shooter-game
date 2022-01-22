@@ -26,6 +26,8 @@ p::selection {
   height: 100vh;
   padding: 10px;
   background-image: url("https://drive.google.com/uc?export=view&id=1ZtxRMm2XV4NcNYPu8YIlqTiLp8hahOi0");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #startBtn {
@@ -43,15 +45,14 @@ p::selection {
   /* border: solid 2px green; */
 }
 
-#welcome-msg {
-  font-family: "Amatic SC", "Sanc Serif";
-  font-size: 44px;
+/* #welcome-msg {
+  font-size: 2.5rem;
   font-weight: 1000;
   position: absolute;
   top: 20%;
   left: 20%;
   color: white;
-}
+} */
 
 #score-info-section {
   /* background-color: pink; */
@@ -63,16 +64,24 @@ p::selection {
 
 .player p {
   color: white;
-  font-family: "Amatic SC", "Sans Serif";
   font-weight: 1000;
-  font-size: 48px;
+  font-size: 3rem;
 }
 
 #score-text {
   color: white;
-  font-family: "Amatic SC", "Sans Serif";
   font-weight: 1000;
-  font-size: 48px; 
+  font-size: 3rem;
+}
+
+@media (max-width: 500px) {
+  .player p {
+    font-size: 1.2rem;
+  }
+
+  #score-text {
+    font-size: 1.2rem;
+  }
 }
 
 img::selection {
